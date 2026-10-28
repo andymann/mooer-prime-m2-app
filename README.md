@@ -1,20 +1,27 @@
-# Mooer Prime M2 for Mac (unofficial)
+# Mooer Prime M2 controller (unofficial)
 
-A native macOS app to control the **Mooer Prime M2** multi-effects pedal over
+Desktop apps that control the **Mooer Prime M2** multi-effects pedal over
 **USB** (preferred) or **Bluetooth LE**, plus a documented description of the
 pedal's protocol.
+
+The app comes in **two versions with the same features**. Pick one:
+
+| | Swift version | Python version |
+|---|---|---|
+| Folder | repository root (`Sources/`) | [`python/`](python/README.md) |
+| Runs on | macOS 13+ | macOS; should also work on Windows and Linux |
+| Built with | SwiftUI, CoreBluetooth, IOKit | PySide6 (Qt), bleak, hidapi |
+| Needs | Xcode Command Line Tools | Python 3.10+ |
+| How to run | [Build and run](#build-and-run) | [Python version](#python-version) |
 
 Not affiliated with or endorsed by Mooer Audio. Everything here was worked
 out by observing the official apps and the pedal. Use at your own risk, and
 read the [warning](docs/PROTOCOL.md) about command `0x81` before
 experimenting.
 
-There's also a **Python version** with the same features in
-[`python/`](python/README.md). It runs from a virtual environment or as a
-standalone app built with PyInstaller, and should also work on Windows and
-Linux.
-
 ## What it does
+
+Both versions do the same things:
 
 - Connects automatically when the M2 is plugged in by USB. Without USB, pick
   `M2Prime M2` from the Bluetooth list.
@@ -32,13 +39,15 @@ Linux.
 - Shows a warning when the pedal's DSP is full.
 - "Copy raw dump" copies every preset's raw values for analysis.
 
-## Requirements
+## Swift version
+
+### Requirements
 
 - macOS 13 or later.
 - Swift 5.9+. The Xcode **Command Line Tools** are enough; Xcode.app isn't
   needed.
 
-## Build and run
+### Build and run
 
 ```bash
 swift build
