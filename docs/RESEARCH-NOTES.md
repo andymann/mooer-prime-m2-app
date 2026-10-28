@@ -270,7 +270,7 @@ type in any slot. The empty preset ("Empty") has all 20 slots `nn 00 00`.
 ### Labels (from official-app screenshots of preset 0A, 2026-10-27)
 
 Every value in the screenshots matches the captured words. **The app displays
-the model as wire value + 1.** Encoded in `Sources/MooerPrimeMac/ModuleCatalog.swift`.
+the model as wire value + 1.** Encoded in `swift/Sources/MooerPrimeMac/ModuleCatalog.swift`.
 
 | Type | Category (confirmed) | 0A model (wire → UI) | Params after enabled+model                          |
 |------|----------------------|----------------------|-----------------------------------------------------|
@@ -497,7 +497,7 @@ the model as wire value + 1.** Encoded in `Sources/MooerPrimeMac/ModuleCatalog.s
   Info.plist embedded in the executable's `__TEXT,__info_plist` Mach-O
   section (the common trick for bundle-less SwiftPM CLI tools) is NOT
   sufficient and the process aborts (SIGABRT, TCC privacy violation) on
-  first Bluetooth access. `scripts/make_app.sh` packages a
+  first Bluetooth access. `swift/scripts/make_app.sh` packages a
   real `.app`; always run via `open ...app`, not the bare binary.
 - `brew install openjdk jadx` were installed on this machine to decompile
   the Android side (`classes.dex`) — confirms the above, no other findings

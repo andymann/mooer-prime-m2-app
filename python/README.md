@@ -207,7 +207,7 @@ Set `HW_VERBOSE=1` to see the protocol log. Slot numbers are 1…80
 | `mooer_prime/usb.py` | USB HID link (hidapi) and `CloudPreset`, the whole-preset format (not used by the UI) | `PrimeUSBDevice.swift` |
 | `mooer_prime/bluetooth.py` | Bluetooth LE link (bleak, on its own asyncio thread) | `BluetoothManager.swift` |
 | `mooer_prime/app.py` | Qt window: device list, preset list, effects chain editor, save bar | `*View.swift`, `MooerPrimeMacApp.swift` |
-| `MooerPrime.spec`, `scripts/build_app.sh` | PyInstaller build | `scripts/make_app.sh` |
+| `MooerPrime.spec`, `scripts/build_app.sh` | PyInstaller build | `swift/scripts/make_app.sh` |
 | `tests/` | Protocol tests with a simulated pedal | — |
 | `tools/hwtest.py` | Step-by-step test against a real pedal over USB | — |
 

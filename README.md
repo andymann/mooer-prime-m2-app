@@ -8,7 +8,7 @@ The app comes in **two versions with the same features**. Pick one:
 
 | | Swift version | Python version |
 |---|---|---|
-| Folder | repository root (`Sources/`) | [`python/`](python/README.md) |
+| Folder | [`swift/`](swift/) | [`python/`](python/README.md) |
 | Runs on | macOS 13+ | macOS; should also work on Windows and Linux |
 | Built with | SwiftUI, CoreBluetooth, IOKit | PySide6 (Qt), bleak, hidapi |
 | Needs | Xcode Command Line Tools | Python 3.10+ |
@@ -49,7 +49,10 @@ Both versions do the same things:
 
 ### Build and run
 
+The Swift package lives in [`swift/`](swift/). Build it from there:
+
 ```bash
+cd swift
 swift build
 ./scripts/make_app.sh debug
 open .build/debug/MooerPrimeMac.app
@@ -88,16 +91,18 @@ python3 -m venv .venv
 
 | Path | Contents |
 |---|---|
-| `Sources/MooerPrimeMac/PrimeFrame.swift` | Frame encoding and decoding (`aa 55`, length, CRC-16/GSM) |
-| `Sources/MooerPrimeMac/PrimeM2Protocol.swift` | `PrimeM2Device`: the protocol session over either link. Sync, request queue, preset select/read, module edit/add/change/delete, save, polling |
-| `Sources/MooerPrimeMac/PrimeUSBDevice.swift` | USB HID link (IOKit). Also `CloudPreset`, the whole-preset read/write format (not used by the UI) |
-| `Sources/MooerPrimeMac/BluetoothManager.swift` | CoreBluetooth link and the app's log |
-| `Sources/MooerPrimeMac/Models.swift` | Preset and module structs, wire-exact |
-| `Sources/MooerPrimeMac/ModuleCatalog.swift` | Categories, model names, parameter labels, ranges and the tempo-sync table |
-| `Sources/MooerPrimeMac/*View.swift` | SwiftUI: device list and the effects chain editor |
-| `scripts/make_app.sh` | Packages the executable as a `.app` |
-| `docs/` | Protocol documentation (below) |
+| `swift/` | The Swift version (files below) |
 | `python/` | The Python version ([its README](python/README.md)) |
+| `docs/` | Protocol documentation, shared by both versions (below) |
+| `swift/Package.swift` | Swift package manifest |
+| `swift/Sources/MooerPrimeMac/PrimeFrame.swift` | Frame encoding and decoding (`aa 55`, length, CRC-16/GSM) |
+| `swift/Sources/MooerPrimeMac/PrimeM2Protocol.swift` | `PrimeM2Device`: the protocol session over either link. Sync, request queue, preset select/read, module edit/add/change/delete, save, polling |
+| `swift/Sources/MooerPrimeMac/PrimeUSBDevice.swift` | USB HID link (IOKit). Also `CloudPreset`, the whole-preset read/write format (not used by the UI) |
+| `swift/Sources/MooerPrimeMac/BluetoothManager.swift` | CoreBluetooth link and the app's log |
+| `swift/Sources/MooerPrimeMac/Models.swift` | Preset and module structs, wire-exact |
+| `swift/Sources/MooerPrimeMac/ModuleCatalog.swift` | Categories, model names, parameter labels, ranges and the tempo-sync table |
+| `swift/Sources/MooerPrimeMac/*View.swift` | SwiftUI: device list and the effects chain editor |
+| `swift/scripts/make_app.sh` | Packages the executable as a `.app` |
 
 ## Documentation
 

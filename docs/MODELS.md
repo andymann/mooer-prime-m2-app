@@ -1,6 +1,6 @@
 # Model list
 
-Generated from `Sources/MooerPrimeMac/ModuleCatalog.swift`.
+Generated from `swift/Sources/MooerPrimeMac/ModuleCatalog.swift`.
 The official app shows a model's **number** as wire value + 1. On the wire it's the second word of a module record.
 
 | Type | Category | Models |
