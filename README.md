@@ -103,3 +103,7 @@ plugin ships only with Xcode.app. Keep this pattern when adding views.
 Tested on a Prime M2 with firmware V1.5.0. The looper, drum machine,
 tuner, MIDI, global settings and the user IR / sample slots aren't
 supported yet.
+
+## License
+
+[MIT](LICENSE). Mooer and Prime are trademarks of their respective owner.
