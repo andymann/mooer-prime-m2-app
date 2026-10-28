@@ -1,0 +1,26 @@
+# SwiftPM / Xcode build output
+.build/
+out/
+DerivedData/
+*.xcodeproj/
+.swiftpm/
+Package.resolved
+*.app
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Pedal data: preset dumps and backups can be personal
+*.preset
+*.dump
+
+# Proprietary installers and app packages (don't redistribute)
+*.dmg
+*.apk
+*.apks
+*.asar
