@@ -9,6 +9,11 @@ out by observing the official apps and the pedal. Use at your own risk, and
 read the [warning](docs/PROTOCOL.md) about command `0x81` before
 experimenting.
 
+There's also a **Python version** with the same features in
+[`python/`](python/README.md). It runs from a virtual environment or as a
+standalone app built with PyInstaller, and should also work on Windows and
+Linux.
+
 ## What it does
 
 - Connects automatically when the M2 is plugged in by USB. Without USB, pick
@@ -55,6 +60,21 @@ Command Line Tools installed, `@State` fails to compile
 (`plugin for module 'SwiftUIMacros' not found`), because that compiler
 plugin ships only with Xcode.app. Keep this pattern when adding views.
 
+## Python version
+
+The [`python/`](python/README.md) folder has a port of this app built on
+PySide6 (Qt), bleak (Bluetooth) and hidapi (USB). Its README explains how
+to run it in a venv, build an app with PyInstaller, and run its tests,
+including a step-by-step test against a real pedal. In short (with Python
+3.10 or later):
+
+```bash
+cd python
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python -m mooer_prime
+```
+
 ## Project layout
 
 | Path | Contents |
@@ -68,6 +88,7 @@ plugin ships only with Xcode.app. Keep this pattern when adding views.
 | `Sources/MooerPrimeMac/*View.swift` | SwiftUI: device list and the effects chain editor |
 | `scripts/make_app.sh` | Packages the executable as a `.app` |
 | `docs/` | Protocol documentation (below) |
+| `python/` | The Python version ([its README](python/README.md)) |
 
 ## Documentation
 

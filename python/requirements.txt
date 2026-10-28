@@ -1,0 +1,3 @@
+PySide6-Essentials>=6.6
+bleak>=0.22
+hidapi>=0.14

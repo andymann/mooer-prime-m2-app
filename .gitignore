@@ -24,3 +24,10 @@ Package.resolved
 *.apk
 *.apks
 *.asar
+
+# Python version
+.venv/
+__pycache__/
+*.pyc
+python/build/
+python/dist/
